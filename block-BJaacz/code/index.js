@@ -1,24 +1,65 @@
 // Test using EXAMPLE functions given below each function.
-
+let number = [2,4,6,8,10,18,20];
 /*
   Create a function named addTwo which accepts a number, adds 2 to the number and return the new value.
 */
-
+function addTwo(num) {
+  for(let i =0 ;i <num.length;i++){
+    num[i] += 2;
+  }
+  return num;
+}
+console.log(addTwo(number));
+/*function addTwo(num){
+  //return number + 2;
+  for(let i=0;i<number.length;i++){
+    number[i]+=2;
+  }
+  console.log(num);
+}*/
+//console.log(addTwo(20));
 /*
   Create a function named addThree which accepts a number, adds 3 to the number and return the new value.
 */
 
+function addThree(number){
+  return number + 3;
+}
+//console.log(addThree(20));
 /*
   Create a function named addFive which accepts a number, adds 5 to the number and return the new value.
 */
-
+function addFive(number){
+  return number + 5;
+}
+//console.log(addFive(20));
 /*
   Create a function named addTwoToArray which accepts:
     - An array of numbers
     - Returns a new array where 2 is added to each element
     - While doing so use the funciton addTwo
 */
-
+/*function addTwoToArray(arra){
+  let newArray=[];
+  for( let num of arra){
+    if(addTwo(num)){
+      newArray.push(num);
+    }
+  }
+  return newArray;   
+}
+console.log(addTwoToArray(number));
+*/
+function addTwoToArray(num){
+  let newArray = [];
+  for(let i=0;i<num.length;i++){
+    if(addTwo(num)){
+      newArray.push(num);
+    }
+  }
+  return newArray;
+}
+console.log(addTwoToArray(number));
 /*
   Create a function named addThreeToArray which accepts:
     - an array of numbers
@@ -48,7 +89,16 @@ In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeatin
     console.log(changeArray([1, 2, 3, 4, 5, 6], addThree)); // [4, 5, 6, 7, 8, 9]
     console.log(changeArray([1, 2, 3, 4, 5, 6], addFive)); // [6, 7, 8, 9, 10, 11]
 */
-
+function changeArray(num , func){
+  let newArray = [];
+  for(let i=0;i<num.length;i++){
+    if(func(num)){
+      newArray.push(num);
+    }
+  }
+  return newArray;
+}
+console.log(changeArray(number , addTwo));
 /*
   Create a function called sendMessage that accepts two arguments:
     - a string (message) and a function (callback).
@@ -113,7 +163,17 @@ const grades = [
     console.log(isAdult(people[1])); // true
     console.log(isAdult(people[2])); // true
 */
-
+function isAdult(num){
+  for(let i=0 ; i<num.length ; i++ ){
+    if(num[i].age > 18)
+    { return true;
+    }
+    else{
+      return false;
+    }
+  }
+}
+console.log(isAdult(people[2]));
 /*
   Create a function named isMale which accepts:
     - an object
@@ -319,3 +379,8 @@ filter is a higher order function.
     console.log(multiplyByFive(20)); // 180
     console.log(multiplyByFive(5)); // 45
 */
+function multiplyBy(num){
+  return function (num2){
+    return num *num2 ;
+  }
+}
