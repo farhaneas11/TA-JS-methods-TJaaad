@@ -31,8 +31,8 @@ Example:
      ```
    - `charAt` accepts a index (number data type) and return the character on that index in the string.
 
-2. `toUpperCase`
-3. `toLowerCase`
+2. `toUpperCase`: name.toUpperCase
+3. `toLowerCase` : name.toLowerCase
 4. `trim`
 5. `trimEnd`
 6. `trimStart`
@@ -48,3 +48,35 @@ Example:
 16. `slice`
 17. `split`
 18. `substring`
+sentence.trim('',21)
+"i am a selfish person"
+let hello = "       world    ";
+undefined
+hello.trimEnd();
+"       world"
+sentence.concat('',hello)
+"i am a selfish person       world    "
+sentence.endsWith('son')
+true
+sentence.includes('on',5)
+true
+sentence.indexOf('person');
+15
+sentence.padEnd(4,'....');
+"i am a selfish person"
+sentence.padStart(4,'......');
+"i am a selfish person"
+name.repeat(5);
+"farhanfarhanfarhanfarhanfarhan"
+sentence.replace('i','faru');
+"faru am a selfish person"
+sentence.slice(2,5);
+"am "
+sentence.split('');
+(21) ["i", " ", "a", "m", " ", "a", " ", "s", "e", "l", "f", "i", "s", "h", " ", "p", "e", "r", "s", "o", "n"]
+sentence.split('',5);
+(5) ["i", " ", "a", "m", " "]
+sentence.split('',20);
+(20) ["i", " ", "a", "m", " ", "a", " ", "s", "e", "l", "f", "i", "s", "h", " ", "p", "e", "r", "s", "o"]
+sentence.substring(20,1)
+" am a selfish perso"
