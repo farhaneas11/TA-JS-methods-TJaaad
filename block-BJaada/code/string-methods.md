@@ -48,3 +48,39 @@ Example:
 16. `slice`
 17. `split`
 18. `substring`
+
+
+et name = " farahan is agood boy";
+undefined
+name.endsWith("boy")
+true
+name.includes("agood");
+true
+name.indexOf("boy")
+18
+name.lastIndexOf("agood");
+12
+name.padEnd(5,'!')
+" farahan is agood boy"
+let last = 'we are good';
+undefined
+last.padEnd(3,`.....`)
+"we are good"
+last.padEnd(10,'faru');
+"we are good"
+'hello'.padEnd(5,'!');
+"hello"
+name.slice(0,5);
+" fara"
+name.split(5,30);
+[" farahan is agood boy"]
+name.split(0,5);
+[" farahan is agood boy"]
+name.split(4,5);
+[" farahan is agood boy"]
+name.split(4,'');
+[]length: 0__proto__: Array(0)
+name.split("");
+(21) [" ", "f", "a", "r", "a", "h", "a", "n", " ", "i", "s", " ", "a", "g", "o", "o", "d", " ", "b", "o", "y"]
+name.split("",5);
+(5) [" ", "f", "a", "r", "a"]
