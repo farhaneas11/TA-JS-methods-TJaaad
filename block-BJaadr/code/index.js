@@ -1,9 +1,11 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
-function countAllPeople() {
-  // your code goes here
+function countAllPeople(acc,cv) {
+  for(let gott of got.houses){
+    return gott.people;
+  }
 }
-
+let counting = got.reduce(countAllPeople)
 function peopleByHouses() {
   // your code goes here
 }
