@@ -1,4 +1,4 @@
-#### Open `index.js` and do the following:
+#### Open `index.js` and do the following:k
 
 You have a file named `data.js` that contains the data that is accessible to you using name `got`.
 

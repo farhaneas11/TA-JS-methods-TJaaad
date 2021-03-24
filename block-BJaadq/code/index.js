@@ -1,24 +1,51 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
-  // your code goes here
+  let total = 0;
+  for(let gots of got.houses){
+    total = total + gots.people.length;
+  }
+  return total;  
 }
+console.log(countAllPeople());
+
 
 function peopleByHouses() {
-  // your code goes here
+  let total = 0;
+  for(let i=0 ;i<got.length;i++){
+    total = total + got.houses.length;
+  }
+  return total;  
 }
+console.log(peopleByHouses());
 
 function everyone() {
-  // your code goes here
+  for(let gots of got.houses){
+    for(let gotss of gots.people.name){
+      for(let i=0 ;i<gotss.length;i++){
+        return `names are ${gotss}`;
+      }
+    }
+  }
 }
-
+console.log(everyone);
 function nameWithS() {
-  // your code goes here
+  for(let gots of got.houses){
+    for(let gotss of gots.people){
+      return gotss.name;
+    }
+  }  
 }
 
-function nameWithA() {
-  // your code goes here
+function nameWithA(array) {
+  for(let gots of got.houses){
+    for(let gotss of gots.people){
+      return gotss;
+    }
+  }
+  console.log(gotss.name);
 }
+//let filterA = nameWithA.map((nn) => nn.startsWith("s"));
 
 function surnameWithS() {
   // your code goes here
