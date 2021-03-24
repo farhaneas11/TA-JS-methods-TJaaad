@@ -16,8 +16,25 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
+let avggrade = persons.reduce((acc , cv) => { 
+  return acc + cv.grade ; 
+},0 );
 
 // Find the average grade of male
+function avgM(array){
+  let final = [];
+  for(let  i=0;i<=array.length;i++){
+    if(array.sex === "M"){
+      final.push(array);
+    }
+  }
+  final.reduce((acc ,cv)=>{
+    acc = acc + cv.grade;
+    return acc;    
+  },0);
+  return final;
+  console.log(final);
+}
 
 // Find the average grade of female
 
@@ -28,7 +45,7 @@ let persons = [
 // Find the highest grade in female
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+/*
 const fruitBasket = [
   'banana',
   'cherry',
@@ -42,7 +59,7 @@ const fruitBasket = [
   'orange',
   'fig',
 ];
-
+*/
 /* 
 
 Use the fruitBasket array to create an object where key will be the fruit and value will be the number of times
@@ -61,7 +78,7 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
-
+/*
 const data = [
   [1, 2, 3],
   [4, 5, 6],
@@ -77,7 +94,7 @@ const dataTwo = [
   [7, 8, 9],
   [[10, 11], 12],
 ];
-
+*/
 // Using reduce flat dataTwo array
 
 /*
@@ -90,7 +107,7 @@ Create these functions which accepts a number value and returns a number value:
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
 
-let pipeline = [
+/*let pipeline = [
   increment,
   double,
   decrement,
@@ -114,7 +131,7 @@ EXAMPLE:
 
   ...
 */
-
+/*
 let pipeline2 = [
   increment,
   half,
@@ -128,5 +145,5 @@ let pipeline2 = [
   increment,
   triple,
 ];
-
-// Find the output using pipeline2 the initial value if 8
+/*
+// Find the output using pipeline2 the initial value if 8 */
