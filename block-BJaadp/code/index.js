@@ -16,35 +16,41 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
+let personln = persons.length;
 let avggrade = persons.reduce((acc , cv) => { 
   return acc + cv.grade ; 
 },0 );
-
+console.log(avggrade / personln);
 // Find the average grade of male
-function avgM(array){
-  let final = [];
-  for(let  i=0;i<=array.length;i++){
-    if(array.sex === "M"){
-      final.push(array);
-    }
-  }
-  final.reduce((acc ,cv)=>{
-    acc = acc + cv.grade;
-    return acc;    
-  },0);
-  return final;
-  console.log(final);
-}
+let avrgM = persons.filter((per) => per.sex === "M")
+.reduce((acc,cv)=>{
+  return acc + cv.grade;
+},0) / personln;
 
 // Find the average grade of female
-
+let avrgM = persons.filter((per) => per.sex === "F")
+.reduce((acc,cv)=>{
+  return acc + cv.grade;
+},0) / personln;
 // Find the highest grade
-
+let highest = persons.map((per) => per.grade)
+.sort((a,b)=>a-b)
+.pop();
 // Find the highest grade in male
-
+let highestM = persons.map((per) => per.grade)
+.filter((pers) => per.sex === "M")
+.sort((a,b)=>a-b)
+.pop();
 // Find the highest grade in female
-
+let highestF = persons.map((per) => per.grade)
+.filter((pers) => per.sex === "F")
+.sort((a,b)=>a-b)
+.pop();
 // Find the highest grade for people whose name starts with 'J' or 'P'
+let highestJ = persons..filter((per) => per.name.startsWith("J"))
+.map((pers) => per.grade)
+.sort((a,b)=>a-b)
+.pop();
 /*
 const fruitBasket = [
   'banana',
@@ -68,7 +74,14 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-
+let fruitsO = persons.reduce((acc,cv) => {
+  if(acc[cv]){
+    acc[cv] = acc[cv] + 1;
+  }
+  else { 
+    acc[cv] = 1;
+  }
+},{})
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -77,8 +90,13 @@ that fruit appeared. Use the variable defined above (fruitsObj). To get all the 
 Output: 
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
+object.keys(fruitsO) : gives the fruits name or object in the fruitsO;
+object.values(fruitsO) : gives the value or number of times the fruits occured vaue will be given;
 */
-/*
+let objectarray = Object.keys(fruitsO).reduce((acc,cv)=>{
+    acc = acc.concat([[cv,fruitsO[cv]]]);
+},[])
+
 const data = [
   [1, 2, 3],
   [4, 5, 6],
@@ -86,8 +104,12 @@ const data = [
   [10, 11, 12],
 ];
 
+Data.reduce((acc,cv) => { 
+  acc = acc.concat(cv)
+  return acc;
+}),[];
 // Using reduce flat data array
-
+/*
 const dataTwo = [
   [1, 2, 3],
   [4, 5, 6],
@@ -95,6 +117,10 @@ const dataTwo = [
   [[10, 11], 12],
 ];
 */
+DataTwo.reduce((acc,cv) => { 
+  acc = acc.concat(cv.flat(Infinity))
+  return acc;
+},[]);
 // Using reduce flat dataTwo array
 
 /*
@@ -106,8 +132,22 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
-
-/*let pipeline = [
+function increment(num){
+  return num + 1 ;
+}
+function double(num){
+  return num + 2 ;
+}
+function decrement(num){
+  return num - 1 ;
+}
+function triple(num){
+  return num + 3 ;
+}
+function half(num){
+  return Math.round(num / 2) ;
+}
+let pipeline = [
   increment,
   double,
   decrement,
@@ -117,7 +157,10 @@ Create these functions which accepts a number value and returns a number value:
   half,
   increment,
 ];
-
+pipeline.reduce((acc,cv) => {
+  acc = cv(acc);
+  return acc;
+},3);
 /*
 Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
 
@@ -147,3 +190,7 @@ let pipeline2 = [
 ];
 /*
 // Find the output using pipeline2 the initial value if 8 */
+pipeline2.reduce((acc,cv) => {
+  acc = cv(acc);
+  return acc;
+},8);
